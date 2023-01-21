@@ -2,6 +2,7 @@ package com.example.my_client.models;
 
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotEmpty;
+import jakarta.validation.constraints.Pattern;
 import jakarta.validation.constraints.Size;
 
 @Entity
@@ -20,6 +21,7 @@ public class User {
 
     @NotEmpty(message = "Пароль не межет быть пустым")
     @Column(name = "password")
+    @Pattern(regexp = "^(?=.*\\d)(?=.*[a-z])(?=.*[A-Z])(?!.*\\s).*$", message = "Пароль должен содержать не меньше 6 символов иметь хоты бы одну цифру, букву в верхнем регистре и спец символ")
     private String password;
 
     @Column(name = "role")
