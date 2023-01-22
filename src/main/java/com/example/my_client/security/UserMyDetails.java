@@ -7,12 +7,12 @@ import org.springframework.security.core.GrantedAuthority;
 
 import java.util.Collection;
 
-public class UserDetails implements org.springframework.security.core.userdetails.UserDetails {
+public class UserMyDetails implements org.springframework.security.core.userdetails.UserDetails {
 
     private final User user;
 
     @Autowired
-    public UserDetails(User user) {
+    public UserMyDetails(User user) {
         this.user = user;
     }
 
